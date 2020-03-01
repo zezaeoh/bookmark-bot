@@ -1,4 +1,3 @@
-
 /*
 {
  "userRequest": {
@@ -33,7 +32,8 @@
 }
  */
 
-import { Allow, IsString, ValidateNested } from 'class-validator';
+import { Allow, IsOptional, IsString, ValidateNested } from 'class-validator';
+import { Type } from 'class-transformer';
 
 class UserProperty {
   @IsString()
@@ -69,9 +69,11 @@ class UserRequest {
   @ValidateNested()
   block: Block;
 
+  @IsOptional()
   @IsString()
   utterance: string;
 
+  @IsOptional()
   @IsString()
   lang: string;
 
@@ -106,14 +108,17 @@ class Action {
 
 export class SkillPayload {
   @ValidateNested()
+  @Type(() => UserRequest)
   readonly userRequest: UserRequest;
 
   @Allow()
   readonly context: any[];
 
   @ValidateNested()
+  @Type(() => Bot)
   readonly bot: Bot;
 
   @ValidateNested()
+  @Type(() => Action)
   readonly action: Action;
 }
