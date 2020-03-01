@@ -16,6 +16,8 @@ async function bootstrap() {
     }),
   );
   await app.listen(port);
+
+  console.log(`${appName} started!, port → ${port}`);
 }
 bootstrap().catch(e => {
   console.error(e);
