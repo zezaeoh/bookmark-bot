@@ -1,0 +1,32 @@
+version: '3.4'
+
+volumes:
+  bookmark_bot_db: {}
+
+services:
+  bookmark-bot:
+    build:
+      context: .
+      target: dev
+    image: jaegeon/bookmark-bot:dev
+    container_name: bookmark-bot-dev
+    depends_on:
+      - mongo
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/app
+    environment:
+      NODE_ENV: development
+#command: sleep infinity
+  mongo:
+    image: mongo:4.2
+    container_name: bookmark-bot-db
+    ports:
+      - 27017:27017
+    volumes:
+      - bookmark_bot_db:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: ilovedano
+      MONGO_INITDB_DATABASE: bookmarkbot
