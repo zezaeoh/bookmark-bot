@@ -13,27 +13,27 @@ export class BookmarkController {
   @HttpCode(200)
   getTags(@Body() skillPayload: SkillPayload): Promise<SkillResponse> {
     this.logger.debug(skillPayload);
-    return this.bookmarkService.getTags(skillPayload)
+    return this.bookmarkService.getTags(skillPayload);
   }
 
   @Post('addTag')
   @HttpCode(200)
   addTag(@Body() skillPayload: SkillPayload) {
     this.logger.debug(skillPayload);
-    return this.bookmarkService.addTag(skillPayload)
+    return this.bookmarkService.addTag(skillPayload);
   }
 
   @Post('getBookmarks')
   @HttpCode(200)
   getBookmarks(@Body() skillPayload: SkillPayload) {
     this.logger.debug(skillPayload);
-    return this.bookmarkService.getBookmarks(skillPayload)
+    return this.bookmarkService.getBookmarks(skillPayload);
   }
 
   @Post('addBookmark')
   @HttpCode(200)
   addBookmark(@Body() skillPayload: SkillPayload) {
     this.logger.debug(skillPayload);
-    return this.bookmarkService.addBookmark(skillPayload)
+    return this.bookmarkService.addBookmark(skillPayload);
   }
 }

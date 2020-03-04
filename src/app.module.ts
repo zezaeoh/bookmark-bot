@@ -8,7 +8,7 @@ import { TypegooseModule } from 'nestjs-typegoose';
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }),
-    BookmarkModule
-  ]
+    BookmarkModule,
+  ],
 })
 export class AppModule {}

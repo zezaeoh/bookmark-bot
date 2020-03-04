@@ -1,6 +1,4 @@
-import {
-  prop,
-} from '@typegoose/typegoose';
+import { prop } from '@typegoose/typegoose';
 
 export class Bookmark {
   @prop({ required: true })

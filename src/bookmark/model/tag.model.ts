@@ -1,11 +1,7 @@
-import {
-  arrayProp,
-  modelOptions,
-  prop,
-} from '@typegoose/typegoose';
+import { arrayProp, modelOptions, prop } from '@typegoose/typegoose';
 import { Bookmark } from './bookmark.model';
 
-@modelOptions({ schemaOptions: { timestamps: true }})
+@modelOptions({ schemaOptions: { timestamps: true } })
 export class Tag {
   @prop({ required: true })
   public _id!: string;

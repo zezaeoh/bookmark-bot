@@ -6,10 +6,8 @@ import { Tag } from './model/tag.model';
 import { BookmarkService } from './bookmark.service';
 
 @Module({
-  imports: [
-    TypegooseModule.forFeature([User, Tag]),
-  ],
+  imports: [TypegooseModule.forFeature([User, Tag])],
   controllers: [BookmarkController],
-  providers: [BookmarkService]
+  providers: [BookmarkService],
 })
 export class BookmarkModule {}

@@ -15,34 +15,28 @@ export class BookmarkService {
     private readonly userModel: ReturnModelType<typeof User>,
     @InjectModel(Tag)
     private readonly tagModel: ReturnModelType<typeof Tag>,
-  ) {
-  }
+  ) {}
 
   async getTags(skillPayload: SkillPayload) {
     const userId = skillPayload.userRequest.user.id;
-    const tags =  await this.userModel.getTags(userId);
+    const tags = await this.userModel.getTags(userId);
     return new SkillResponse({
-      version: "2.0",
+      version: '2.0',
       template: new Template({
-        outputs: [
-          new ListCard()
-        ]
-      })
+        outputs: [new ListCard()],
+      }),
     });
   }
 
   async addTag(skillPayload: SkillPayload) {
     const userId = skillPayload.userRequest.user.id;
-
   }
 
   async getBookmarks(skillPayload: SkillPayload) {
     const userId = skillPayload.userRequest.user.id;
-
   }
 
   async addBookmark(skillPayload: SkillPayload) {
     const userId = skillPayload.userRequest.user.id;
-
   }
 }

@@ -4,13 +4,13 @@ export class ListItem {
   title: string;
   description?: string;
   imageUrl?: string;
-  link?: Link
+  link?: Link;
 }
 
-export class ListCard extends Output{
+export class ListCard extends Output {
   listCard: {
-    header: ListItem,
-    items: ListItem[],
-    buttons?: Button[]
-  }
+    header: ListItem;
+    items: ListItem[];
+    buttons?: Button[];
+  };
 }

@@ -6,9 +6,7 @@ export class Template {
   }
 }
 
-export class Output {
-
-}
+export class Output {}
 
 /**
  * @///<reference path="https://i.kakao.com/docs/skill-response-format#carouselheader"/>

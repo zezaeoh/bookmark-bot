@@ -51,7 +51,8 @@ class UserInfo {
   type: string;
 
   @ValidateNested()
-  properties: UserProperty
+  @Type(() => UserProperty)
+  properties: UserProperty;
 }
 
 class Block {
@@ -67,6 +68,7 @@ class UserRequest {
   timezone: string;
 
   @ValidateNested()
+  @Type(() => Block)
   block: Block;
 
   @IsOptional()
@@ -78,7 +80,8 @@ class UserRequest {
   lang: string;
 
   @ValidateNested()
-  user: UserInfo
+  @Type(() => UserInfo)
+  user: UserInfo;
 }
 
 class Bot {

@@ -10,17 +10,16 @@ async function bootstrap() {
   const port = process.env.PORT || '3000';
 
   const logLevels: LogLevel[] = ['error', 'warn', 'log'];
-  if (nodEnv === 'development')
-    logLevels.push('debug', 'verbose');
+  if (nodEnv === 'development') logLevels.push('debug', 'verbose');
 
   const app = await NestFactory.create(AppModule, {
-    logger: logLevels
+    logger: logLevels,
   });
   app.useGlobalPipes(
     new ValidationPipe({
       transform: true,
       whitelist: nodEnv !== 'development',
-      disableErrorMessages: nodEnv !== 'development'
+      disableErrorMessages: nodEnv !== 'development',
     }),
   );
   await app.listen(port);
